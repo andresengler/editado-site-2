@@ -1,0 +1,2813 @@
+/* Opening Hours Sans Font - Next.js Public Assets */
+@font-face {
+  font-family: 'Opening Hours Sans';
+  src: url('/fonts/OpeningHoursSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 
+ * LEGACY FONTS REMOVED
+ * 
+ * The following fonts were declared but not used in the current typographic system:
+ * - Eiko Light (unused legacy font)
+ * - Editorial New (unused, replaced by Opening Hours Sans)
+ * - Neue Montreal (unused, Opening Hours Sans handles all sans-serif needs)
+ * 
+ * Current typographic system uses only:
+ * - Opening Hours Sans (primary font for all text)
+ * - IBM Plex Mono (functional elements, loaded via Google Fonts)
+ */
+
+/* 
+ * IBM Plex Mono - Primary monospace font for editorial elements
+ * 
+ * IBM Plex Mono provides superior editorial character and legibility:
+ * - Section titles (About, Capabilities, Currently) 
+ * - Functional elements (timestamps, metadata)
+ * - Contact card information
+ * - Digital clock components
+ * 
+ * Available classes: .font-ibm-mono, .font-mono, .text-functional, .text-section-mono
+ */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+/* Fallback imports for when custom fonts are not available */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400&display=swap');
+
+/* 
+ * IBM Plex Mono Typography Notes:
+ * - Designed by IBM with exceptional editorial character
+ * - Superior legibility at small sizes (perfect for 13px section titles)
+ * - More refined letter spacing and character proportions than Geist Mono
+ * - Better suited for professional editorial contexts
+ * - Available in 400 (Regular) and 500 (Medium) weights
+ */
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 14px;
+  --background: #f5f4f2;
+  --background-about: #e8d5b7;  /* Beige claro para About */
+  --background-manifesto: #d4c4a8; /* Beige más cálido para Manifesto */
+  --foreground: oklch(0.145 0 0);
+  --card: #f5f4f2;
+  --card-foreground: oklch(0.145 0 0);
+  --popover: #f5f4f2;
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: #030213;
+  --primary-foreground: #f5f4f2;
+  --secondary: oklch(0.95 0.0058 264.53);
+  --secondary-foreground: #030213;
+  --muted: #ececf0;
+  --muted-foreground: #717182;
+  --accent: #e9ebef;
+  --accent-foreground: #030213;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(0, 0, 0, 0.1);
+  --input: transparent;
+  --input-background: #f3f3f5;
+  --switch-background: #cbced4;
+  --font-weight-medium: 400;
+  --font-weight-normal: 400;
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: #030213;
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+  --working-indicator: oklch(0.72 0.14 45);
+  
+  /* Functional elements color - unified gray for mono typography */
+  --functional-gray: #666666;
+  
+  /* Editorial Typography System */
+  --font-navigation: 14px;           /* Navigation, functional text */
+  --font-section-title: 16px;       /* Section titles (Bio, Capabilities, etc.) */
+  --font-section-mono: 12px;        /* Mono section titles - About, Capabilities, Currently */
+  --font-content: 15px;             /* Primary reading content & Manifesto text */
+  --font-tagline: 18px;             /* Main taglines */
+  --font-footer: 13px;              /* Footer, secondary info - reduced from 14px */
+  --font-clock: 14px;               /* Digital clock */
+  --font-hero-mobile: 22px;         /* Unified hero text for mobile (HomePage + AboutPage) */
+  
+  /* Contact card dimensions and typography - Desktop defaults */
+  --contact-card-width: 400px;      /* Desktop card width */
+  --contact-card-height: 250px;     /* Desktop card height */  
+  --contact-card-padding: 24px;     /* Desktop card padding */
+  --contact-card-name-size: 18px;   /* Desktop name font size */
+  --contact-card-title-size: 16px;  /* Desktop title font size */
+  --contact-card-mono-size: 14px;   /* Desktop mono font size */
+  
+  /* Production Animation System - Optimized for Performance */
+  --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-gentle: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-premium: cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Mobile adjustments */
+  --font-tagline-mobile: 20px;      /* Increased from 16px as requested */
+  --font-section-title-mobile: 15px;
+  
+  /* Contact card mobile adjustments - reduced dimensions and typography */
+  --contact-card-width-mobile: 360px;      /* Mobile card width (reduced from 400px) */
+  --contact-card-height-mobile: 220px;     /* Mobile card height (reduced from 250px) */  
+  --contact-card-padding-mobile: 20px;     /* Mobile card padding (reduced from 24px) */
+  --contact-card-name-size-mobile: 16px;   /* Mobile name font size (reduced from 18px) */
+  --contact-card-title-size-mobile: 14px;  /* Mobile title font size (reduced from 16px) */
+  --contact-card-mono-size-mobile: 13px;   /* Mobile mono font size (reduced from 14px) */
+
+  /* Floating particles colors */
+  --floating-letter-primary: rgba(3, 2, 19, 0.25);
+  --floating-letter-secondary: rgba(113, 113, 130, 0.2);
+  --floating-letter-tertiary: rgba(203, 206, 212, 0.35);
+
+
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 400;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+  --working-indicator: oklch(0.72 0.14 45);
+
+  /* Dark mode floating particles */
+  --floating-letter-primary: rgba(248, 248, 242, 0.3);
+  --floating-letter-secondary: rgba(248, 248, 242, 0.2);
+  --floating-letter-tertiary: rgba(248, 248, 242, 0.15);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-background-about: var(--background-about);
+  --color-background-manifesto: var(--background-manifesto);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-working-indicator: var(--working-indicator);
+  --color-functional-gray: var(--functional-gray);
+
+  /* Editorial Typography System - Opening Hours Sans for all text elements */
+  --font-sans: 'Opening Hours Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Opening Hours Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Opening Hours Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    font-size: var(--font-size);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    scroll-behavior: auto; /* Allow manual scroll control */
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    max-width: 100vw;
+    scroll-behavior: auto; /* Allow manual scroll control */
+  }
+
+  /* Specific override for about page sticky behavior */
+  .about-page-container {
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+  }
+
+  /* 
+   * SMOOTH SCROLL TO TOP SYSTEM
+   * Optimized for fluid, elegant scroll animations
+   * Ensures consistent behavior across all pages and devices
+   */
+  .scroll-to-top-enabled {
+    scroll-behavior: auto !important;
+  }
+
+  .scroll-to-top-enabled html {
+    scroll-behavior: auto !important;
+  }
+
+  .scroll-to-top-enabled body {
+    scroll-behavior: auto !important;
+  }
+
+  /* 
+   * Back to top button enhanced animations
+   * Fluid hover and active states with smooth transitions
+   */
+  .back-to-top-button {
+    transform-origin: center center;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .back-to-top-button:active {
+    transform: translateY(0px) scale(1.05);
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* 
+   * Scroll animation states
+   * Smooth visual feedback during scroll animation
+   */
+  .back-to-top-scrolling {
+    transform: translateY(-1px) scale(1.05);
+    opacity: 0.7;
+    animation: scrollPulse 18.0s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  }
+
+  /* 
+   * Arrow icon fluid animation
+   * Enhanced micro-interactions for better UX
+   */
+  .arrow-icon-fluid {
+    transform-origin: center center;
+    will-change: transform;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+
+
+  .arrow-icon-scrolling {
+    animation: arrowBounce 15.0s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"])), :not(:has([class^="text-"]))) {
+    h1 {
+      font-size: var(--font-tagline);
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 6rem;
+      font-family: var(--font-sans);
+    }
+
+    h2 {
+      font-size: var(--font-section-title);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.2;
+      margin-bottom: 4.5rem;
+      font-family: var(--font-sans);
+    }
+
+    h3 {
+      font-size: var(--font-content);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.0;
+      margin-bottom: 3.5rem;
+      font-family: var(--font-display);
+    }
+
+    h4 {
+      font-size: var(--font-navigation);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.0;
+      margin-bottom: 2.5rem;
+      font-family: var(--font-display);
+    }
+
+    p {
+      font-size: var(--font-content);
+      font-weight: 400;
+      line-height: 1.25;
+      font-family: var(--font-sans);
+    }
+
+    label {
+      font-size: var(--font-navigation);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.15;
+      font-family: var(--font-sans);
+    }
+
+    button {
+      font-size: var(--font-navigation);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.15;
+      font-family: var(--font-sans);
+    }
+
+    input {
+      font-size: var(--font-navigation);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.15;
+      font-family: var(--font-sans);
+    }
+  }
+}
+
+/* Custom font utilities */
+@layer utilities {
+  .font-serif {
+    font-family: var(--font-sans);
+    font-weight: 400;
+  }
+  
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  /* Unified mono typography - IBM Plex Mono as primary */
+  .font-ibm-mono,
+  .font-mono {
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, "Courier New", monospace;
+  }
+
+  /* Legacy aliases for backward compatibility */
+  .font-neue-mono,
+  .font-geist-mono {
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, "Courier New", monospace;
+  }
+
+  /* Editorial Typography Utilities */
+  .text-navigation {
+    font-size: var(--font-navigation);
+    line-height: 1.15;
+  }
+  
+  .text-section-title {
+    font-size: var(--font-section-title-mobile);
+    line-height: 1.2;
+    margin-bottom: 4.5rem;
+  }
+  
+  .text-content {
+    font-size: var(--font-content);
+    line-height: 1.25;
+    font-family: var(--font-sans);
+    font-weight: 400;
+  }
+
+  /* Reduced size for contact card subtitle - for visual alignment */
+  .text-subtitle-small {
+    font-size: 12px;
+    line-height: 1.2;
+  }
+  
+  .text-tagline {
+    font-size: var(--font-tagline-mobile);
+    line-height: 1.1;
+    margin-bottom: 6rem;
+    font-family: var(--font-sans);
+    font-weight: 400;
+  }
+
+  /* Enhanced tagline for mobile - prominent statement */
+  .text-tagline-prominent {
+    font-size: 21px;  /* 20-22px range as requested */
+    line-height: 1.15;
+    margin-bottom: 4rem;
+    font-family: var(--font-sans);
+    font-weight: 400;
+    text-wrap: balance;
+  }
+
+  /* Landing hero text for mobile - larger size with tight leading like About */
+  .text-landing-hero-mobile {
+    font-size: 24px;  /* Larger than current 20-22px */
+    line-height: 1.1; /* Same tight leading as About important text */
+    font-family: var(--font-sans);
+    font-weight: 400;
+    text-wrap: balance;
+    tracking: 0.01em; /* Subtle letter spacing refinement */
+  }
+
+  /* Unified hero text for mobile - consistent size across HomePage and AboutPage */
+  .text-hero-mobile-unified {
+    font-size: var(--font-hero-mobile);  /* 22px - unified size for both pages */
+    line-height: 1.1; /* Tight leading for editorial impact */
+    font-family: var(--font-sans);
+    font-weight: 400;
+    text-wrap: balance;
+    letter-spacing: 0.01em; /* Subtle tracking for readability */
+  }
+  
+  .text-footer {
+    font-size: var(--font-footer);
+    line-height: 1.15;
+  }
+
+  .text-clock {
+    font-size: var(--font-clock);
+  }
+
+  /* Functional elements - unified mono typography with consistent color */
+  .text-functional {
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, "Courier New", monospace;
+    color: var(--functional-gray);
+    font-weight: 400;
+  }
+
+  /* Section titles in mono - About, Capabilities, Currently */
+  .text-section-mono {
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, "Courier New", monospace;
+    font-size: var(--font-section-mono);
+    color: var(--functional-gray);
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: 0.08em; /* Optimized for IBM Plex Mono */
+    text-transform: uppercase;
+  }
+
+  /* Enhanced functional mono with medium weight option */
+  .text-functional-medium {
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, "Courier New", monospace;
+    color: var(--functional-gray);
+    font-weight: 500; /* IBM Plex Mono Medium */
+    letter-spacing: 0.025em;
+  }
+
+  /* Manifesto text - IBM Plex Mono with 14px sizing */
+  .text-manifesto {
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, "Courier New", monospace;
+    font-size: var(--font-navigation); /* 14px - navigation/functional size */
+    font-weight: 400;
+    line-height: 1.2; /* Tighter for editorial density - reduced from 1.25 */
+    letter-spacing: 0.015em; /* Optimized for mono readability */
+    text-wrap: pretty;
+    color: var(--foreground);
+  }
+
+  /* Menu items - Opening Hours Sans with smaller size */
+  .text-menu {
+    font-family: var(--font-sans); /* Opening Hours Sans */
+    font-size: 13px; /* Smaller than current 15px */
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: 0.02em; /* Subtle tracking for elegance */
+  }
+
+  /* Contact card responsive typography */
+  .text-contact-name {
+    font-size: var(--contact-card-name-size-mobile);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: 0.02em;
+  }
+
+  .text-contact-title {
+    font-size: var(--contact-card-title-size-mobile);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: 0.02em;
+  }
+
+  .text-contact-mono {
+    font-size: var(--contact-card-mono-size-mobile);
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, "Courier New", monospace;
+    line-height: 1.1;
+    letter-spacing: 0.06em;
+  }
+
+  /* Contact card responsive container */
+  .contact-card-container {
+    width: var(--contact-card-width-mobile);
+    height: var(--contact-card-height-mobile);
+    padding: var(--contact-card-padding-mobile);
+  }
+
+  /* Desktop adjustments */
+  @media (min-width: 768px) {
+    .text-section-title {
+      font-size: var(--font-section-title);
+    }
+    
+    .text-tagline {
+      font-size: var(--font-tagline);
+      line-height: 1.15;
+      font-family: var(--font-sans);
+      font-weight: 400;
+    }
+
+    .text-tagline-prominent {
+      font-size: 22px;  /* Slightly larger on desktop */
+      line-height: 1.2;
+    }
+
+    .text-manifesto {
+      line-height: 1.18; /* Even tighter for desktop editorial density */
+      letter-spacing: 0.012em; /* Refined letter spacing for larger screens */
+    }
+
+    .text-hero-mobile-unified {
+      font-size: 24px;  /* Slightly larger on desktop */
+      line-height: 1.12; /* Slightly more relaxed for larger screens */
+    }
+
+    /* Contact card desktop typography */
+    .text-contact-name {
+      font-size: var(--contact-card-name-size);
+    }
+
+    .text-contact-title {
+      font-size: var(--contact-card-title-size);
+    }
+
+    .text-contact-mono {
+      font-size: var(--contact-card-mono-size);
+    }
+
+    /* Contact card desktop container */
+    .contact-card-container {
+      width: var(--contact-card-width);
+      height: var(--contact-card-height);
+      padding: var(--contact-card-padding);
+    }
+  }
+
+  /* Typography control utilities */
+  .text-balanced {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Responsive viewport utilities for proper layout handling */
+  .viewport-height-safe {
+    height: 100vh;
+    height: 100dvh; /* Dynamic viewport height for mobile browsers */
+  }
+
+  .min-viewport-height-safe {
+    min-height: 100vh;
+    min-height: 100dvh; /* Dynamic viewport height for mobile browsers */
+  }
+
+  /* Landing page responsive layout utilities */
+  .landing-container {
+    height: 100vh;
+    height: 100dvh;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  .landing-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  /* Safe area handling for notched devices */
+  @supports (height: 100dvh) {
+    .landing-container {
+      height: 100dvh;
+    }
+  }
+
+  /* Landscape orientation adjustments for mobile */
+  @media (max-height: 500px) and (orientation: landscape) {
+    .landing-container {
+      height: 100vh;
+      min-height: 500px;
+    }
+  }
+
+  /* Very small screens adjustments */
+  @media (max-width: 320px) {
+    .responsive-padding {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+  }
+
+  /* Tablet landscape specific adjustments */
+  @media (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+    .landing-hero-responsive {
+      font-size: 1.875rem; /* 30px */
+    }
+  }
+
+  /* Responsive spacing utilities for different screen sizes */
+  .responsive-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .responsive-padding {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .responsive-padding {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .responsive-padding {
+      padding-left: 6vw;
+      padding-right: 6vw;
+    }
+  }
+
+  /* Responsive text sizing for landing hero */
+  .landing-hero-responsive {
+    font-size: 1.5rem; /* 24px */
+    line-height: 1.1;
+  }
+
+  @media (min-width: 640px) {
+    .landing-hero-responsive {
+      font-size: 1.75rem; /* 28px */
+    }
+  }
+
+  @media (min-width: 768px) {
+    .landing-hero-responsive {
+      font-size: 2rem; /* 32px */
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .landing-hero-responsive {
+      font-size: 2.25rem; /* 36px */
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .landing-hero-responsive {
+      font-size: 2.625rem; /* 42px */
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .landing-hero-responsive {
+      font-size: 3rem; /* 48px */
+    }
+  }
+
+  /* Responsive image sizing for landing */
+  .landing-image-responsive {
+    width: 12rem; /* 192px - mobile base */
+    max-width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .landing-image-responsive {
+      width: 14rem; /* 224px */
+    }
+  }
+
+  @media (min-width: 768px) {
+    .landing-image-responsive {
+      width: 16rem; /* 256px */
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .landing-image-responsive {
+      width: 18rem; /* 288px */
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .landing-image-responsive {
+      width: 20rem; /* 320px */
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .landing-image-responsive {
+      width: 22rem; /* 352px */
+    }
+  }
+
+  /* Clean manifesto text without animations */
+
+  .avoid-widows {
+    orphans: 3;
+    widows: 3;
+    text-wrap: pretty;
+    word-spacing: -0.05em;
+  }
+
+  .optimal-reading {
+    text-wrap: balance;
+    hyphens: auto;
+    hyphenate-limit-chars: 6 3 3;
+    hyphenate-limit-lines: 2;
+    hyphenate-limit-last: always;
+    hyphenate-limit-zone: 8%;
+  }
+
+  /* Sticky behavior utilities */
+  .sticky-container {
+    position: sticky;
+    top: 8rem;
+    z-index: 10;
+  }
+
+  @media (min-width: 1024px) {
+    .sticky-container {
+      top: 10rem;
+    }
+  }
+
+  /* Override for specific sticky behavior */
+  .force-sticky {
+    position: sticky !important;
+    top: 8rem !important;
+    z-index: 10 !important;
+  }
+
+  @media (min-width: 1024px) {
+    .force-sticky {
+      top: 10rem !important;
+    }
+  }
+
+  /* Desktop-only sticky behavior for About Page main text */
+  .sticky-desktop-only {
+    position: relative; /* Default mobile behavior - normal flow */
+    z-index: 10;
+  }
+
+  @media (min-width: 768px) {
+    .sticky-desktop-only {
+      position: sticky !important;
+      top: 8rem !important;
+      z-index: 15 !important; /* Higher than normal sticky to ensure prominence */
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .sticky-desktop-only {
+      top: 10rem !important;
+    }
+  }
+
+  /* Enhanced sticky behavior for smooth transitions */
+  .sticky-desktop-only {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, position;
+    backface-visibility: hidden;
+  }
+
+  /* Ensure sticky content has proper spacing and visual hierarchy */
+  @media (min-width: 768px) {
+    .sticky-desktop-only {
+      /* Add subtle background for better readability when sticky */
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(232, 213, 183, 0.02) 20%,
+        rgba(232, 213, 183, 0.03) 80%,
+        transparent 100%
+      );
+      padding: 1rem 0;
+      margin: -1rem 0;
+      border-radius: 0.5rem;
+    }
+  }
+
+  /* Temporarily disable fixed positioning to restore content visibility */
+  .fixed-desktop-only {
+    position: relative; /* Normal flow for all devices */
+    z-index: 10;
+  }
+
+  /* Temporarily disable scrollable content column adjustments */
+  .scrollable-content-column {
+    position: relative;
+    z-index: 5;
+  }
+
+  /* Simple paper texture */
+  .paper-texture {
+    position: relative;
+    background: linear-gradient(135deg, #f8f7f5 0%, #f5f4f2 100%);
+    background-image: 
+      radial-gradient(circle at 1px 1px, rgba(0,0,0,.02) 0.5px, transparent 0),
+      radial-gradient(circle at 3px 2px, rgba(0,0,0,.015) 0.5px, transparent 0);
+    background-size: 16px 16px, 12px 12px;
+  }
+
+  /* Paper drop animation */
+  .paper-drop {
+    animation: paperDrop 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+
+  .paper-sway {
+    animation: paperSway 0.6s ease-out 0.3s forwards;
+  }
+
+  /* Floating letters aesthetic effects */
+  .floating-particle {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+  }
+
+  /* Soft blur for ethereal effect */
+  .ethereal-blur {
+    backdrop-filter: blur(0.5px);
+    -webkit-backdrop-filter: blur(0.5px);
+  }
+
+  /* Background utilities for different pages with smooth transitions */
+  .bg-about {
+    background-color: var(--background-about);
+    transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .bg-manifesto {
+    background-color: var(--background-manifesto);
+    transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* 
+   * Clean page transition effects - production ready
+   * Page transition blur: 2px (clean page changes)
+   * Contact modal blur: 18px (clear separation)
+   */
+  .page-blur-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    backdrop-filter: blur(0px);
+    transition: backdrop-filter 0.25s var(--transition-smooth);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .page-blur-overlay.active {
+    backdrop-filter: blur(2px) saturate(1.02);
+    z-index: 30;
+    pointer-events: none;
+  }
+
+  /* 
+   * Ensure page blur never affects contact modal
+   * Contact modal creates its own isolated stacking context
+   */
+  .contact-modal-portal + .page-blur-overlay {
+    z-index: -1 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* Simple background transition overlay */
+  .bg-transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.25s var(--transition-smooth);
+  }
+
+  .bg-transition-overlay.active {
+    opacity: 0.05;
+    z-index: 1;
+  }
+
+  /* 
+   * Contact modal portal - ensure it appears above everything
+   * Unified z-index system prevents conflicts between page transitions and modal
+   */
+  .contact-modal-portal {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    z-index: 9999 !important;
+    pointer-events: auto !important;
+    isolation: isolate !important; /* Create new stacking context */
+  }
+
+  /* 
+   * Prevent page transition blur from interfering with contact modal blur
+   * This ensures the modal blur is always 18px regardless of page state
+   */
+  .contact-modal-portal * {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .contact-modal-portal .contact-modal-backdrop-unified {
+    backdrop-filter: blur(18px) saturate(1.02) brightness(1.005) !important;
+    -webkit-backdrop-filter: blur(18px) saturate(1.02) brightness(1.005) !important;
+  }
+
+  /* 
+   * UNIFIED CONTACT MODAL BACKDROP BLUR - OPTIMIZED VERSION
+   * This ensures that when the contact card appears, the background blur is identical 
+   * across ALL pages (Home, About, Manifesto) and ALL devices (mobile, desktop)
+   * 
+   * Blur parameters: 18px blur + 1.02 saturate + 1.005 brightness
+   * Optimized from 25px to 18px so "un poquito se pueda ver" the background content
+   */
+  .contact-modal-backdrop-unified {
+    backdrop-filter: blur(18px) saturate(1.02) brightness(1.005) !important;
+    -webkit-backdrop-filter: blur(18px) saturate(1.02) brightness(1.005) !important;
+    transition: backdrop-filter 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+
+  /* 
+   * Legacy class for compatibility - redirects to unified version
+   * This ensures any existing references still work correctly
+   */
+  .contact-modal-backdrop {
+    backdrop-filter: blur(18px) saturate(1.02) brightness(1.005) !important;
+    -webkit-backdrop-filter: blur(18px) saturate(1.02) brightness(1.005) !important;
+  }
+
+  /* 
+   * IMPORTANT: All ContactModal instances across the app use this OPTIMIZED backdrop blur:
+   * - Header.tsx ContactModal (used in all pages)
+   * - AboutPage.tsx ContactModal 
+   * - ManifestoPage.tsx ContactModal
+   * 
+   * OPTIMIZED BLUR EFFECT: 18px provides clear separation while allowing 
+   * "un poquito" of background content to remain visible, creating elegant depth
+   * without completely obscuring the underlying page content.
+   * This guarantees consistent visual experience regardless of which page 
+   * the user is on when they open the contact card.
+   * 
+   * Effect progression:
+   * - Original: 15px (too subtle)
+   * - Previous: 25px (too strong)  
+   * - Current: 18px (perfect balance)
+   */
+
+  /* 
+   * Override protection: ensure contact modal blur takes precedence 
+   * over page transition blurs and other backdrop filters
+   * OPTIMIZED BLUR: 18px for perfect visibility balance
+   */
+  .contact-modal-portal .contact-modal-backdrop-unified {
+    backdrop-filter: blur(18px) saturate(1.02) brightness(1.005) !important;
+    -webkit-backdrop-filter: blur(18px) saturate(1.02) brightness(1.005) !important;
+    z-index: 9998 !important;
+  }
+
+  /* 
+   * Ensure contact modal backdrop is never affected by page transition effects
+   * This prevents the page transition blur from interfering with contact modal blur
+   */
+  .contact-modal-portal {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .contact-modal-portal > .contact-modal-backdrop-unified {
+    backdrop-filter: blur(18px) saturate(1.02) brightness(1.005) !important;
+    -webkit-backdrop-filter: blur(18px) saturate(1.02) brightness(1.005) !important;
+  }
+
+  /* 
+   * Enhanced cross-browser compatibility for optimized blur effect
+   * Ensures 18px blur works consistently across Chrome, Firefox, Safari, Edge
+   */
+  @supports (backdrop-filter: blur(18px)) {
+    .contact-modal-backdrop-unified {
+      backdrop-filter: blur(18px) saturate(1.02) brightness(1.005) !important;
+    }
+  }
+
+  @supports (-webkit-backdrop-filter: blur(18px)) {
+    .contact-modal-backdrop-unified {
+      -webkit-backdrop-filter: blur(18px) saturate(1.02) brightness(1.005) !important;
+    }
+  }
+
+  /* 
+   * Fallback for browsers that don't support backdrop-filter
+   * Provides subtle background overlay when blur is not available
+   * Reduced opacity to match the "un poquito se pueda ver" principle
+   */
+  @supports not (backdrop-filter: blur(18px)) and not (-webkit-backdrop-filter: blur(18px)) {
+    .contact-modal-backdrop-unified {
+      background: rgba(245, 244, 242, 0.75) !important;
+    }
+  }
+
+  /* 
+   * MOBILE MENU BACKDROP - DISTORTED CLOUDY EFFECT
+   * Extreme blur and distortion effects for immersive menu overlay
+   * Designed to create maximum visual separation with dramatic effects
+   * Z-index positioned below contact modal (z-40) but above page content
+   */
+  .mobile-menu-backdrop-heavy {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    z-index: 40 !important;
+    
+    /* Extreme distorted blur - 120px with multiple distortion effects */
+    backdrop-filter: 
+      blur(120px) 
+      saturate(1.8) 
+      brightness(0.75) 
+      contrast(1.4) 
+      hue-rotate(2deg) 
+      sepia(0.08) !important;
+    -webkit-backdrop-filter: 
+      blur(120px) 
+      saturate(1.8) 
+      brightness(0.75) 
+      contrast(1.4) 
+      hue-rotate(2deg) 
+      sepia(0.08) !important;
+    
+    /* Heavy cloudy background overlay with opacity variations */
+    background: radial-gradient(
+      ellipse at center,
+      rgba(245, 244, 242, 0.96) 0%,
+      rgba(240, 238, 235, 0.94) 50%,
+      rgba(245, 244, 242, 0.97) 100%
+    ) !important;
+    
+    /* Animated transition with breathing effect */
+    transition: backdrop-filter 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                background 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    
+    /* Subtle breathing animation for living blur effect */
+    animation: cloudyBreathe 4s ease-in-out infinite !important;
+    
+    /* Ensure clickable for closing menu */
+    pointer-events: auto !important;
+  }
+
+  /* 
+   * Cross-browser compatibility for extreme distorted mobile menu blur
+   * Ensures 120px blur with distortion effects works across all browsers
+   */
+  @supports (backdrop-filter: blur(120px)) {
+    .mobile-menu-backdrop-heavy {
+      backdrop-filter: 
+        blur(120px) 
+        saturate(1.8) 
+        brightness(0.75) 
+        contrast(1.4) 
+        hue-rotate(2deg) 
+        sepia(0.08) !important;
+    }
+  }
+
+  @supports (-webkit-backdrop-filter: blur(120px)) {
+    .mobile-menu-backdrop-heavy {
+      -webkit-backdrop-filter: 
+        blur(120px) 
+        saturate(1.8) 
+        brightness(0.75) 
+        contrast(1.4) 
+        hue-rotate(2deg) 
+        sepia(0.08) !important;
+    }
+  }
+
+  /* 
+   * Enhanced mobile-specific distortion effects
+   * Even more dramatic effects on mobile for maximum immersion
+   */
+  @media (max-width: 768px) {
+    .mobile-menu-backdrop-heavy {
+      /* Extreme mobile distortion - even more intense than desktop */
+      backdrop-filter: 
+        blur(150px) 
+        saturate(2.2) 
+        brightness(0.65) 
+        contrast(1.6) 
+        hue-rotate(3deg) 
+        sepia(0.12) 
+        grayscale(0.05) !important;
+      -webkit-backdrop-filter: 
+        blur(150px) 
+        saturate(2.2) 
+        brightness(0.65) 
+        contrast(1.6) 
+        hue-rotate(3deg) 
+        sepia(0.12) !important;
+      
+      /* Heavier mobile background with more dramatic gradient */
+      background: radial-gradient(
+        ellipse at center,
+        rgba(245, 244, 242, 0.98) 0%,
+        rgba(235, 232, 228, 0.96) 40%,
+        rgba(245, 244, 242, 0.99) 100%
+      ) !important;
+      
+      /* More dramatic breathing effect on mobile */
+      animation: cloudyBreatheIntense 3.5s ease-in-out infinite !important;
+    }
+  }
+
+  /* 
+   * Fallback for browsers that don't support backdrop-filter
+   * Heavy overlay with texture simulation when blur is not available
+   */
+  @supports not (backdrop-filter: blur(120px)) and not (-webkit-backdrop-filter: blur(120px)) {
+    .mobile-menu-backdrop-heavy {
+      background: radial-gradient(
+        ellipse at center,
+        rgba(245, 244, 242, 0.96) 0%,
+        rgba(235, 232, 228, 0.94) 50%,
+        rgba(245, 244, 242, 0.97) 100%
+      ) !important;
+      
+      /* Add texture pattern to simulate blur when backdrop-filter unavailable */
+      background-image: 
+        radial-gradient(circle at 25% 25%, rgba(0,0,0,0.02) 1px, transparent 1px),
+        radial-gradient(circle at 75% 75%, rgba(0,0,0,0.015) 1px, transparent 1px),
+        radial-gradient(circle at 50% 80%, rgba(0,0,0,0.018) 1px, transparent 1px) !important;
+      background-size: 20px 20px, 30px 30px, 25px 25px !important;
+    }
+    
+    @media (max-width: 768px) {
+      .mobile-menu-backdrop-heavy {
+        background: radial-gradient(
+          ellipse at center,
+          rgba(245, 244, 242, 0.98) 0%,
+          rgba(230, 227, 223, 0.96) 40%,
+          rgba(245, 244, 242, 0.99) 100%
+        ) !important;
+      }
+    }
+  }
+
+  /* 
+   * BLUR HIERARCHY SYSTEM - DISTORTED VISUAL EFFECTS
+   * 
+   * Page transitions: 4px blur (subtle page changes)
+   * Contact modal: 18px blur (elegant separation with visibility)
+   * Mobile menu: 120px blur (extreme distorted separation with visual effects)
+   * Mobile menu (mobile): 150px blur (maximum distortion with color shifts)
+   * 
+   * Z-index hierarchy:
+   * - Mobile menu backdrop: z-40
+   * - Contact modal: z-9998-9999 (highest priority)
+   * - Page transitions: z-30
+   * 
+   * This creates a dramatic visual hierarchy with increasing levels of
+   * distortion and immersion for different interface elements
+   */
+
+  /* 
+   * FINAL VALIDATION: Distorted Blur System with Visual Effects
+   * 
+   * ✓ All pages use exactly 18px blur (Home, About, Manifesto)
+   * ✓ Mobile and desktop have identical blur effect for contact modal
+   * ✓ Page transitions (4px) are completely separate from modal blur (18px)
+   * ✓ Mobile menu (120px-150px) provides extreme distorted separation
+   * ✓ Background content is heavily distorted with color shifts and effects
+   * ✓ Z-index hierarchy prevents any conflicts (modal: 9998-9999, menu: 40, page transitions: 30)
+   * ✓ Cross-browser compatibility with fallbacks and texture simulation
+   * ✓ Animated breathing effects for living blur experience
+   * 
+   * Expected behavior:
+   * - Contact modal opens with 18px backdrop blur on any page
+   * - Mobile menu opens with 120px-150px extreme distorted blur
+   * - Background becomes heavily cloudy with color distortion effects
+   * - Breathing animations create living, dynamic blur experience
+   * - Sepia, hue-rotate, and saturation create immersive distortion
+   * - Mobile devices get even more intense effects (150px+ blur)
+   * 
+   * Distortion effects applied:
+   * - Desktop: 120px blur + saturate(1.8) + contrast(1.4) + hue-rotate(2deg) + sepia(0.08)
+   * - Mobile: 150px blur + saturate(2.2) + contrast(1.6) + hue-rotate(3deg) + sepia(0.12) + grayscale(0.05)
+   * - Breathing animations with dynamic filter variations
+   * - Radial gradient backgrounds for enhanced cloudiness
+   * - Texture fallbacks for non-supporting browsers
+   */
+
+  /* Production Transition System - Clean and Fast */
+  .transition-smooth {
+    transition: all 0.25s var(--transition-smooth);
+  }
+
+  .transition-gentle {
+    transition: all 0.3s var(--transition-gentle);
+  }
+
+  .transition-premium {
+    transition: all 0.25s var(--transition-premium);
+  }
+
+  /* Performance-optimized motion */
+  .motion-smooth {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: all 0.25s var(--transition-smooth);
+  }
+
+  /* Production animation classes - clean and efficient */
+  .animate-fade-in {
+    animation: fadeIn 0.3s var(--transition-smooth) forwards;
+  }
+
+  .animate-fade-out {
+    animation: fadeOut 0.25s var(--transition-smooth) forwards;
+  }
+
+  .animate-rise-in {
+    animation: riseIn 0.4s var(--transition-gentle) forwards;
+  }
+
+  .animate-breathe {
+    animation: subtleBreathe 8s ease-in-out infinite;
+  }
+
+  /* Clean hover effects */
+  .hover-lift {
+    transition: all 0.25s var(--transition-smooth);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-1px);
+  }
+
+  .hover-subtle {
+    transition: all 0.3s var(--transition-gentle);
+  }
+
+  .hover-subtle:hover {
+    opacity: 0.8;
+  }
+
+  /* Stagger animation system */
+  .stagger-container > * {
+    animation-delay: calc(var(--stagger-delay, 0) * 100ms);
+  }
+
+  .stagger-fast {
+    --stagger-delay: 0.05s;
+  }
+
+  .stagger-normal {
+    --stagger-delay: 0.1s;
+  }
+
+  .stagger-slow {
+    --stagger-delay: 0.15s;
+  }
+
+  /* Parallax and depth effects */
+  .parallax-gentle {
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+
+  .depth-subtle {
+    transform: translateZ(0);
+    box-shadow: 
+      0 1px 3px rgba(0,0,0,0.02),
+      0 1px 2px rgba(0,0,0,0.024);
+  }
+
+  .depth-enhanced {
+    transform: translateZ(0);
+    box-shadow: 
+      0 4px 8px rgba(0,0,0,0.04),
+      0 2px 4px rgba(0,0,0,0.06),
+      0 1px 2px rgba(0,0,0,0.08);
+  }
+
+
+
+  /* Editorial optimal reading width for Manifesto desktop */
+  .manifesto-editorial-width {
+    max-width: 28em; /* Optimal for IBM Plex Mono 15px - ~50-65 chars per line */
+  }
+
+  @media (min-width: 1024px) {
+    .manifesto-editorial-width {
+      max-width: 30em; /* Slightly wider on large screens */
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .manifesto-editorial-width {
+      max-width: 32em; /* Maximum optimal width for readability */
+    }
+  }
+
+  /* 
+   * MANIFESTO SCROLL FADE EFFECT - ULTRA SUBTLE
+   * 
+   * TECHNIQUE: CSS mask-image with linear gradients
+   * PERFORMANCE: Hardware-accelerated, no JavaScript required
+   * COMPATIBILITY: Works on all modern browsers with fallback
+   * 
+   * HOW IT WORKS:
+   * - Uses mask-image to create transparent areas at top/bottom of content
+   * - Content naturally fades to page background color (no fixed colors)
+   * - Adapts automatically to any background color changes
+   * - Only affects the content container, header/footer remain untouched
+   * 
+   * VISUAL EFFECT:
+   * - Ultra-subtle gradient fade in/out at viewport edges
+   * - Stronger effect on larger screens where scroll area is bigger
+   * - No performance impact, no scroll event listeners needed
+   * - Creates natural reading flow with gentle visual boundaries
+   * 
+   * BROWSER SUPPORT:
+   * - Modern browsers: CSS mask-image with perfect gradients
+   * - Legacy browsers: Fallback with gradient overlays using page background color
+   */
+  .manifesto-scroll-fade {
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.05) 5%,
+      rgba(0, 0, 0, 0.15) 12%,
+      rgba(0, 0, 0, 0.5) 20%,
+      rgba(0, 0, 0, 0.85) 28%,
+      rgba(0, 0, 0, 1) 35%,
+      rgba(0, 0, 0, 1) 65%,
+      rgba(0, 0, 0, 0.85) 72%,
+      rgba(0, 0, 0, 0.5) 80%,
+      rgba(0, 0, 0, 0.15) 88%,
+      rgba(0, 0, 0, 0.05) 95%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.05) 5%,
+      rgba(0, 0, 0, 0.15) 12%,
+      rgba(0, 0, 0, 0.5) 20%,
+      rgba(0, 0, 0, 0.85) 28%,
+      rgba(0, 0, 0, 1) 35%,
+      rgba(0, 0, 0, 1) 65%,
+      rgba(0, 0, 0, 0.85) 72%,
+      rgba(0, 0, 0, 0.5) 80%,
+      rgba(0, 0, 0, 0.15) 88%,
+      rgba(0, 0, 0, 0.05) 95%,
+      transparent 100%
+    );
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    
+    /* Smooth transition when effect is applied */
+    transition: -webkit-mask-image 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                mask-image 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* 
+   * Enhanced version with slightly stronger fade for larger screens
+   * Maintains subtlety while providing clearer visual boundaries on desktop
+   */
+  @media (min-width: 768px) {
+    .manifesto-scroll-fade {
+      -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0, 0, 0, 0.08) 6%,
+        rgba(0, 0, 0, 0.25) 14%,
+        rgba(0, 0, 0, 0.6) 22%,
+        rgba(0, 0, 0, 0.9) 30%,
+        rgba(0, 0, 0, 1) 38%,
+        rgba(0, 0, 0, 1) 62%,
+        rgba(0, 0, 0, 0.9) 70%,
+        rgba(0, 0, 0, 0.6) 78%,
+        rgba(0, 0, 0, 0.25) 86%,
+        rgba(0, 0, 0, 0.08) 94%,
+        transparent 100%
+      );
+      mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0, 0, 0, 0.08) 6%,
+        rgba(0, 0, 0, 0.25) 14%,
+        rgba(0, 0, 0, 0.6) 22%,
+        rgba(0, 0, 0, 0.9) 30%,
+        rgba(0, 0, 0, 1) 38%,
+        rgba(0, 0, 0, 1) 62%,
+        rgba(0, 0, 0, 0.9) 70%,
+        rgba(0, 0, 0, 0.6) 78%,
+        rgba(0, 0, 0, 0.25) 86%,
+        rgba(0, 0, 0, 0.08) 94%,
+        transparent 100%
+      );
+    }
+  }
+
+  /* 
+   * Desktop large screens - even more refined gradient
+   * Maximum subtlety with optimal reading experience
+   */
+  @media (min-width: 1024px) {
+    .manifesto-scroll-fade {
+      -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0, 0, 0, 0.1) 8%,
+        rgba(0, 0, 0, 0.3) 16%,
+        rgba(0, 0, 0, 0.7) 24%,
+        rgba(0, 0, 0, 0.95) 32%,
+        rgba(0, 0, 0, 1) 40%,
+        rgba(0, 0, 0, 1) 60%,
+        rgba(0, 0, 0, 0.95) 68%,
+        rgba(0, 0, 0, 0.7) 76%,
+        rgba(0, 0, 0, 0.3) 84%,
+        rgba(0, 0, 0, 0.1) 92%,
+        transparent 100%
+      );
+      mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0, 0, 0, 0.1) 8%,
+        rgba(0, 0, 0, 0.3) 16%,
+        rgba(0, 0, 0, 0.7) 24%,
+        rgba(0, 0, 0, 0.95) 32%,
+        rgba(0, 0, 0, 1) 40%,
+        rgba(0, 0, 0, 1) 60%,
+        rgba(0, 0, 0, 0.95) 68%,
+        rgba(0, 0, 0, 0.7) 76%,
+        rgba(0, 0, 0, 0.3) 84%,
+        rgba(0, 0, 0, 0.1) 92%,
+        transparent 100%
+      );
+    }
+  }
+
+  /* 
+   * Fallback for browsers that don't support mask-image
+   * Uses ultra-subtle gradient overlays to simulate fade effect
+   * Respects manifesto background color automatically
+   */
+  @supports not (mask-image: linear-gradient(to bottom, black, black)) and not (-webkit-mask-image: linear-gradient(to bottom, black, black)) {
+    .manifesto-scroll-fade {
+      position: relative;
+    }
+    
+    .manifesto-scroll-fade::before,
+    .manifesto-scroll-fade::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 12vh;
+      pointer-events: none;
+      z-index: 1;
+      transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .manifesto-scroll-fade::before {
+      top: 0;
+      background: linear-gradient(
+        to bottom,
+        var(--background-manifesto) 0%,
+        color-mix(in srgb, var(--background-manifesto) 95%, transparent) 20%,
+        color-mix(in srgb, var(--background-manifesto) 85%, transparent) 40%,
+        color-mix(in srgb, var(--background-manifesto) 60%, transparent) 65%,
+        color-mix(in srgb, var(--background-manifesto) 25%, transparent) 85%,
+        transparent 100%
+      );
+    }
+    
+    .manifesto-scroll-fade::after {
+      bottom: 0;
+      background: linear-gradient(
+        to top,
+        var(--background-manifesto) 0%,
+        color-mix(in srgb, var(--background-manifesto) 95%, transparent) 20%,
+        color-mix(in srgb, var(--background-manifesto) 85%, transparent) 40%,
+        color-mix(in srgb, var(--background-manifesto) 60%, transparent) 65%,
+        color-mix(in srgb, var(--background-manifesto) 25%, transparent) 85%,
+        transparent 100%
+      );
+    }
+    
+    @media (min-width: 768px) {
+      .manifesto-scroll-fade::before,
+      .manifesto-scroll-fade::after {
+        height: 15vh;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .manifesto-scroll-fade::before,
+      .manifesto-scroll-fade::after {
+        height: 18vh;
+      }
+    }
+  }
+
+  /* 
+   * VIEWPORT-AWARE SCROLL FADE
+   * Alternative implementation using CSS custom properties and calc()
+   * for even more precise control based on viewport dimensions
+   */
+  .manifesto-scroll-fade-enhanced {
+    --fade-intensity: 0.15;
+    --fade-spread: 25%;
+    
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, calc(var(--fade-intensity) * 0.3)) calc(var(--fade-spread) * 0.2),
+      rgba(0, 0, 0, calc(var(--fade-intensity) * 0.8)) calc(var(--fade-spread) * 0.5),
+      rgba(0, 0, 0, calc(var(--fade-intensity) * 2)) calc(var(--fade-spread) * 0.8),
+      rgba(0, 0, 0, 1) var(--fade-spread),
+      rgba(0, 0, 0, 1) calc(100% - var(--fade-spread)),
+      rgba(0, 0, 0, calc(var(--fade-intensity) * 2)) calc(100% - var(--fade-spread) * 0.8),
+      rgba(0, 0, 0, calc(var(--fade-intensity) * 0.8)) calc(100% - var(--fade-spread) * 0.5),
+      rgba(0, 0, 0, calc(var(--fade-intensity) * 0.3)) calc(100% - var(--fade-spread) * 0.2),
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, calc(var(--fade-intensity) * 0.3)) calc(var(--fade-spread) * 0.2),
+      rgba(0, 0, 0, calc(var(--fade-intensity) * 0.8)) calc(var(--fade-spread) * 0.5),
+      rgba(0, 0, 0, calc(var(--fade-intensity) * 2)) calc(var(--fade-spread) * 0.8),
+      rgba(0, 0, 0, 1) var(--fade-spread),
+      rgba(0, 0, 0, 1) calc(100% - var(--fade-spread)),
+      rgba(0, 0, 0, calc(var(--fade-intensity) * 2)) calc(100% - var(--fade-spread) * 0.8),
+      rgba(0, 0, 0, calc(var(--fade-intensity) * 0.8)) calc(100% - var(--fade-spread) * 0.5),
+      rgba(0, 0, 0, calc(var(--fade-intensity) * 0.3)) calc(100% - var(--fade-spread) * 0.2),
+      transparent 100%
+    );
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+  }
+
+  @media (min-width: 768px) {
+    .manifesto-scroll-fade-enhanced {
+      --fade-intensity: 0.25;
+      --fade-spread: 22%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .manifesto-scroll-fade-enhanced {
+      --fade-intensity: 0.35;
+      --fade-spread: 20%;
+    }
+  }
+
+  /* 
+   * DYNAMIC MANIFESTO SCROLL FADE SYSTEM
+   * Responsive scroll-triggered fade effects for enhanced reading experience
+   * Top fade: Activated when first sentence approaches viewport top
+   * Bottom fade: Always visible, fixed to viewport bottom
+   */
+  
+  .manifesto-dynamic-fade-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6rem; /* 96px */
+    pointer-events: none;
+    z-index: 30;
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(
+      to bottom,
+      var(--background-manifesto) 0%,
+      color-mix(in srgb, var(--background-manifesto) 95%, transparent) 20%,
+      color-mix(in srgb, var(--background-manifesto) 85%, transparent) 40%,
+      color-mix(in srgb, var(--background-manifesto) 60%, transparent) 60%,
+      color-mix(in srgb, var(--background-manifesto) 30%, transparent) 80%,
+      transparent 100%
+    );
+  }
+
+  .manifesto-dynamic-fade-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 6rem; /* 96px */
+    pointer-events: none;
+    z-index: 30;
+    opacity: 0.9;
+    background: linear-gradient(
+      to top,
+      var(--background-manifesto) 0%,
+      color-mix(in srgb, var(--background-manifesto) 95%, transparent) 20%,
+      color-mix(in srgb, var(--background-manifesto) 85%, transparent) 40%,
+      color-mix(in srgb, var(--background-manifesto) 60%, transparent) 60%,
+      color-mix(in srgb, var(--background-manifesto) 30%, transparent) 80%,
+      transparent 100%
+    );
+  }
+
+  /* Responsive adjustments for dynamic fades */
+  @media (min-width: 768px) {
+    .manifesto-dynamic-fade-top,
+    .manifesto-dynamic-fade-bottom {
+      height: 8rem; /* 128px */
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .manifesto-dynamic-fade-top,
+    .manifesto-dynamic-fade-bottom {
+      height: 10rem; /* 160px */
+    }
+  }
+
+  /* 
+   * MANIFESTO DYNAMIC FADE RESPONSIVE HELPERS
+   * Utilities for the ManifestoScrollFadeDynamic component
+   */
+  
+  .manifesto-fade-responsive {
+    height: 6rem; /* Base: 96px */
+  }
+
+  @media (min-width: 768px) {
+    .manifesto-fade-responsive {
+      height: 8rem; /* Tablet: 128px */
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .manifesto-fade-responsive {
+      height: 10rem; /* Desktop: 160px */
+    }
+  }
+
+  /* Ensure proper z-index hierarchy */
+  .manifesto-fade-layer {
+    z-index: 25; /* Below header (30) but above content (20) */
+  }
+
+  /* Performance optimizations for fade elements */
+  .manifesto-fade-optimized {
+    will-change: opacity;
+    contain: layout style paint;
+    transform: translateZ(0); /* Force hardware acceleration */
+    backface-visibility: hidden;
+  }
+
+  /* Smooth fade transitions for better UX */
+  .manifesto-fade-smooth {
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                backdrop-filter 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .manifesto-fade-smooth.scrolling {
+    transition: opacity 0.2s ease-out,
+                backdrop-filter 0.2s ease-out;
+  }
+
+  /* Active state for top fade when triggered */
+  .manifesto-dynamic-fade-top.active {
+    opacity: 1;
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Ensure fades don't interfere with header/footer */
+  .manifesto-page-container {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Content protection from fade overlap */
+  .manifesto-content-protected {
+    position: relative;
+    z-index: 20;
+  }
+
+  /* Smooth scroll behavior for manifesto */
+  .manifesto-smooth-scroll {
+    scroll-behavior: smooth;
+  }
+
+  /* Fallback for browsers that don't support color-mix in dynamic fades */
+  @supports not (background: color-mix(in srgb, white 50%, transparent)) {
+    .manifesto-dynamic-fade-top {
+      background: linear-gradient(
+        to bottom,
+        #d4c4a8 0%,
+        rgba(212, 196, 168, 0.95) 20%,
+        rgba(212, 196, 168, 0.85) 40%,
+        rgba(212, 196, 168, 0.6) 60%,
+        rgba(212, 196, 168, 0.3) 80%,
+        transparent 100%
+      ) !important;
+    }
+    
+    .manifesto-dynamic-fade-bottom {
+      background: linear-gradient(
+        to top,
+        #d4c4a8 0%,
+        rgba(212, 196, 168, 0.95) 20%,
+        rgba(212, 196, 168, 0.85) 40%,
+        rgba(212, 196, 168, 0.6) 60%,
+        rgba(212, 196, 168, 0.3) 80%,
+        transparent 100%
+      ) !important;
+    }
+  }
+
+
+
+
+
+  /* Clean background transitions */
+  .bg-smooth-transition {
+    position: relative;
+    transition: background-color 0.3s var(--transition-smooth);
+  }
+
+
+
+  /* Clean cinematic transition */
+  .cinematic-transition {
+    position: relative;
+    transition: all 0.25s var(--transition-smooth);
+  }
+
+  /* Linen texture - very subtle version */
+  .linen-subtle {
+    position: relative;
+    background: #fefefe;
+    background-image: 
+      linear-gradient(90deg, rgba(0,0,0,0.008) 50%, transparent 50%),
+      linear-gradient(rgba(0,0,0,0.006) 50%, transparent 50%);
+    background-size: 3px 3px;
+  }
+  
+  .linen-subtle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 25% 25%, rgba(139,134,122,0.012) 1px, transparent 1px),
+      radial-gradient(circle at 75% 75%, rgba(139,134,122,0.008) 1px, transparent 1px),
+      radial-gradient(circle at 50% 50%, rgba(139,134,122,0.006) 1px, transparent 1px);
+    background-size: 16px 16px, 20px 20px, 12px 12px;
+    background-position: 0px 0px, 8px 10px, 4px 6px;
+    pointer-events: none;
+    opacity: 0.6;
+  }
+
+  /* Noise Aesthetic Effects for Contact Card */
+  
+  /* Film Grain - Subtle photographic noise */
+  .noise-film-grain {
+    position: relative;
+    background: #fefefe;
+  }
+  
+  .noise-film-grain::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 20% 80%, rgba(0,0,0,0.04) 0.5px, transparent 0.5px),
+      radial-gradient(circle at 80% 20%, rgba(0,0,0,0.03) 0.5px, transparent 0.5px),
+      radial-gradient(circle at 40% 40%, rgba(0,0,0,0.035) 0.5px, transparent 0.5px),
+      radial-gradient(circle at 60% 80%, rgba(0,0,0,0.025) 0.5px, transparent 0.5px),
+      radial-gradient(circle at 90% 70%, rgba(0,0,0,0.03) 0.5px, transparent 0.5px);
+    background-size: 4px 4px, 6px 6px, 3px 3px, 5px 5px, 7px 7px;
+    background-position: 0px 0px, 2px 3px, 1px 1px, 3px 2px, 4px 4px;
+    pointer-events: none;
+    opacity: 0.8;
+    animation: filmGrainFlicker 0.16s steps(2) infinite;
+  }
+
+  /* Paper Fiber - Organic paper texture */
+  .noise-paper-fiber {
+    position: relative;
+    background: linear-gradient(135deg, #fefefe 0%, #fdfdfd 100%);
+  }
+  
+  .noise-paper-fiber::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      linear-gradient(45deg, transparent 40%, rgba(0,0,0,0.015) 40%, rgba(0,0,0,0.015) 60%, transparent 60%),
+      linear-gradient(-45deg, transparent 35%, rgba(0,0,0,0.012) 35%, rgba(0,0,0,0.012) 65%, transparent 65%),
+      radial-gradient(ellipse at 30% 70%, rgba(120,115,105,0.02) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 30%, rgba(120,115,105,0.015) 0%, transparent 40%);
+    background-size: 12px 12px, 8px 8px, 40px 40px, 60px 60px;
+    background-position: 0px 0px, 4px 4px, 10px 20px, 30px 10px;
+    pointer-events: none;
+    opacity: 0.7;
+  }
+
+  .noise-paper-fiber::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(0,0,0,0.008) 1px, transparent 1px),
+      radial-gradient(circle at 75% 75%, rgba(0,0,0,0.012) 0.5px, transparent 0.5px),
+      radial-gradient(circle at 45% 85%, rgba(0,0,0,0.006) 1px, transparent 1px),
+      radial-gradient(circle at 85% 15%, rgba(0,0,0,0.01) 0.5px, transparent 0.5px);
+    background-size: 16px 16px, 12px 12px, 20px 20px, 14px 14px;
+    background-position: 0px 0px, 6px 8px, 12px 4px, 8px 12px;
+    pointer-events: none;
+    opacity: 0.6;
+  }
+
+  /* Vintage Noise - Aged paper with tonal variations */
+  .noise-vintage {
+    position: relative;
+    background: radial-gradient(ellipse at center, #fefefe 0%, #fcfcfc 100%);
+  }
+  
+  .noise-vintage::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 15% 15%, rgba(139,134,122,0.02) 1px, transparent 1px),
+      radial-gradient(circle at 85% 85%, rgba(139,134,122,0.015) 1px, transparent 1px),
+      radial-gradient(circle at 50% 15%, rgba(139,134,122,0.018) 1px, transparent 1px),
+      radial-gradient(circle at 15% 85%, rgba(139,134,122,0.012) 1px, transparent 1px),
+      radial-gradient(circle at 85% 15%, rgba(139,134,122,0.025) 0.5px, transparent 0.5px);
+    background-size: 18px 18px, 22px 22px, 14px 14px, 26px 26px, 10px 10px;
+    background-position: 0px 0px, 9px 11px, 7px 3px, 13px 17px, 5px 7px;
+    pointer-events: none;
+    opacity: 0.65;
+  }
+
+  .noise-vintage::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 1px,
+        rgba(120,115,105,0.004) 1px,
+        rgba(120,115,105,0.004) 2px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 2px,
+        rgba(120,115,105,0.006) 2px,
+        rgba(120,115,105,0.006) 3px
+      );
+    background-size: 6px 6px, 8px 8px;
+    pointer-events: none;
+    opacity: 0.4;
+  }
+
+  /* Realistic Paper Texture - Organic fibers and micro-shadows */
+  .paper-realistic {
+    position: relative;
+    background: linear-gradient(135deg, #fefefe 0%, #fcfcfc 30%, #fefefe 70%, #fbfbfb 100%);
+  }
+  
+  .paper-realistic::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      /* Organic fiber-like patterns */
+      linear-gradient(12deg, transparent 45%, rgba(0,0,0,0.008) 46%, rgba(0,0,0,0.008) 54%, transparent 55%),
+      linear-gradient(78deg, transparent 48%, rgba(0,0,0,0.006) 49%, rgba(0,0,0,0.006) 51%, transparent 52%),
+      linear-gradient(156deg, transparent 47%, rgba(0,0,0,0.007) 48%, rgba(0,0,0,0.007) 52%, transparent 53%),
+      linear-gradient(203deg, transparent 46%, rgba(0,0,0,0.005) 47%, rgba(0,0,0,0.005) 53%, transparent 54%);
+    background-size: 
+      40px 40px, 
+      35px 35px, 
+      45px 45px, 
+      38px 38px,
+      120px 120px,
+      100px 100px,
+      140px 140px;
+    background-position: 
+      0px 0px, 
+      20px 15px, 
+      10px 25px, 
+      30px 5px,
+      0px 0px,
+      60px 80px,
+      40px 20px;
+    pointer-events: none;
+    opacity: 0.6;
+  }
+
+  .paper-realistic::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      /* Subtle tonal variations */
+      radial-gradient(ellipse 200px 300px at 25% 25%, rgba(248,247,245,0.3) 0%, transparent 50%),
+      radial-gradient(ellipse 150px 250px at 75% 75%, rgba(252,251,249,0.2) 0%, transparent 50%),
+      radial-gradient(ellipse 180px 200px at 50% 80%, rgba(245,244,242,0.25) 0%, transparent 50%),
+      /* Paper fiber highlights */
+      linear-gradient(23deg, transparent 49%, rgba(255,255,255,0.015) 50%, transparent 51%),
+      linear-gradient(67deg, transparent 49%, rgba(255,255,255,0.012) 50%, transparent 51%),
+      linear-gradient(134deg, transparent 49%, rgba(255,255,255,0.018) 50%, transparent 51%);
+    background-size: 
+      400px 400px,
+      350px 350px,
+      380px 380px,
+      60px 60px,
+      45px 45px,
+      70px 70px;
+    background-position: 
+      0px 0px,
+      100px 150px,
+      200px 50px,
+      15px 30px,
+      35px 10px,
+      25px 45px;
+    pointer-events: none;
+    opacity: 0.4;
+  }
+
+  /* Strong Editorial Texture - More dramatic noise for comparison */
+  .noise-editorial-strong {
+    position: relative;
+    background: linear-gradient(135deg, #fefefe 0%, #fcfcfc 50%, #fefefe 100%);
+  }
+  
+  .noise-editorial-strong::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px),
+      linear-gradient(0deg, rgba(0,0,0,0.06) 1px, transparent 1px),
+      radial-gradient(circle at 33% 33%, rgba(0,0,0,0.12) 0.5px, transparent 0.5px),
+      radial-gradient(circle at 66% 66%, rgba(0,0,0,0.1) 0.5px, transparent 0.5px),
+      radial-gradient(circle at 10% 90%, rgba(0,0,0,0.09) 0.5px, transparent 0.5px),
+      radial-gradient(circle at 90% 10%, rgba(0,0,0,0.08) 0.5px, transparent 0.5px);
+    background-size: 4px 4px, 4px 4px, 6px 6px, 8px 8px, 10px 10px, 12px 12px;
+    background-position: 0px 0px, 0px 0px, 2px 2px, 4px 4px, 6px 6px, 8px 8px;
+    pointer-events: none;
+    opacity: 1;
+  }
+
+  .noise-editorial-strong::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(ellipse at 20% 80%, rgba(139,134,122,0.08) 2px, transparent 2px),
+      radial-gradient(ellipse at 80% 20%, rgba(139,134,122,0.1) 1px, transparent 1px),
+      radial-gradient(ellipse at 60% 40%, rgba(139,134,122,0.06) 3px, transparent 3px),
+      radial-gradient(ellipse at 40% 60%, rgba(139,134,122,0.05) 1.5px, transparent 1.5px),
+      radial-gradient(ellipse at 85% 85%, rgba(139,134,122,0.09) 1px, transparent 1px);
+    background-size: 15px 15px, 12px 12px, 18px 18px, 16px 16px, 10px 10px;
+    background-position: 0px 0px, 8px 6px, 12px 15px, 6px 9px, 9px 3px;
+    pointer-events: none;
+    opacity: 0.8;
+  }
+}
+
+@keyframes paperDrop {
+  0% { 
+    transform: translateY(-100vh) rotate(-5deg);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(20px) rotate(2deg);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(-10px) rotate(-1deg);
+  }
+  100% { 
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes paperSway {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(1deg);
+  }
+  75% {
+    transform: rotate(-0.5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes paperFlicker {
+  0%, 100% { 
+    opacity: 0.5; 
+  }
+  33% { 
+    opacity: 0.4; 
+  }
+  66% { 
+    opacity: 0.45; 
+  }
+}
+
+/* Floating letters organic movement */
+@keyframes floatOrganic {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px) rotate(1deg);
+  }
+  50% {
+    transform: translateY(-10px) translateX(-5px) rotate(-0.5deg);
+  }
+  75% {
+    transform: translateY(-30px) translateX(8px) rotate(1.5deg);
+  }
+}
+
+@keyframes breatheSubtle {
+  0%, 100% {
+    opacity: 0.08;
+    filter: blur(1px);
+  }
+  50% {
+    opacity: 0.15;
+    filter: blur(0.5px);
+  }
+}
+
+/* Film grain flicker animation */
+@keyframes filmGrainFlicker {
+  0% {
+    background-position: 0px 0px, 2px 3px, 1px 1px, 3px 2px, 4px 4px;
+  }
+  50% {
+    background-position: 1px 1px, 3px 2px, 2px 0px, 4px 3px, 5px 3px;
+  }
+  100% {
+    background-position: 2px 1px, 1px 4px, 0px 2px, 2px 4px, 3px 5px;
+  }
+}
+
+/* Simple fade animation */
+@keyframes simpleFade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Cloud floating animation for modal backdrop */
+@keyframes cloudFloat {
+  0%, 100% {
+    transform: translateX(0px) translateY(0px) scale(1);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateX(10px) translateY(-5px) scale(1.02);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateX(-5px) translateY(8px) scale(0.98);
+    opacity: 0.65;
+  }
+  75% {
+    transform: translateX(8px) translateY(-3px) scale(1.01);
+    opacity: 0.68;
+  }
+}
+
+/* Floating particles animation for modal atmosphere */
+@keyframes particleFloat {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.08;
+  }
+  20% {
+    transform: translateY(-6px) translateX(2px);
+    opacity: 0.12;
+  }
+  40% {
+    transform: translateY(-3px) translateX(-1px);
+    opacity: 0.1;
+  }
+  60% {
+    transform: translateY(-8px) translateX(3px);
+    opacity: 0.14;
+  }
+  80% {
+    transform: translateY(-4px) translateX(-2px);
+    opacity: 0.09;
+  }
+}
+
+/* Subtle cinematic shimmer effect */
+@keyframes cinematicShimmer {
+  0% {
+    background-position: -150% 0;
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    background-position: 150% 0;
+    opacity: 0.5;
+  }
+}
+
+/* Subtle blur appearance animation */
+@keyframes subtleBlurAppear {
+  0% {
+    opacity: 0;
+    backdrop-filter: blur(0px) saturate(1);
+    -webkit-backdrop-filter: blur(0px) saturate(1);
+  }
+  100% {
+    opacity: 0.3;
+    backdrop-filter: blur(1px) saturate(1.02);
+    -webkit-backdrop-filter: blur(1px) saturate(1.02);
+  }
+}
+
+
+
+/* Gradient fade-in animation */
+@keyframes gradientFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  60% {
+    opacity: 0.4;
+    transform: translateY(3px);
+  }
+  100% {
+    opacity: 0.7;
+    transform: translateY(0px);
+  }
+}
+
+/* Clean fade animations for production */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+/* Essential animations only */
+@keyframes riseIn {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes subtleBreathe {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.95;
+  }
+}
+
+/* Refined fade animations for subtle transitions - legacy support */
+@keyframes fadeInSubtle {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+    filter: blur(0.5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+    filter: blur(0px);
+  }
+}
+
+@keyframes fadeOutSubtle {
+  0% {
+    opacity: 1;
+    transform: translateY(0px);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-6px);
+    filter: blur(0.5px);
+  }
+}
+
+/* Enhanced smooth opacity transitions */
+@keyframes opacityGentleFade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 
+ * DISTORTED CLOUDY BLUR ANIMATIONS
+ * Advanced breathing and distortion effects for mobile menu backdrop
+ */
+
+/* Cloudy breathing animation - subtle backdrop filter variations */
+@keyframes cloudyBreathe {
+  0%, 100% {
+    backdrop-filter: 
+      blur(120px) 
+      saturate(1.8) 
+      brightness(0.75) 
+      contrast(1.4) 
+      hue-rotate(2deg) 
+      sepia(0.08);
+    -webkit-backdrop-filter: 
+      blur(120px) 
+      saturate(1.8) 
+      brightness(0.75) 
+      contrast(1.4) 
+      hue-rotate(2deg) 
+      sepia(0.08);
+  }
+  50% {
+    backdrop-filter: 
+      blur(125px) 
+      saturate(1.9) 
+      brightness(0.72) 
+      contrast(1.45) 
+      hue-rotate(3deg) 
+      sepia(0.1);
+    -webkit-backdrop-filter: 
+      blur(125px) 
+      saturate(1.9) 
+      brightness(0.72) 
+      contrast(1.45) 
+      hue-rotate(3deg) 
+      sepia(0.1);
+  }
+}
+
+/* Intense cloudy breathing for mobile - more dramatic variations */
+@keyframes cloudyBreatheIntense {
+  0%, 100% {
+    backdrop-filter: 
+      blur(150px) 
+      saturate(2.2) 
+      brightness(0.65) 
+      contrast(1.6) 
+      hue-rotate(3deg) 
+      sepia(0.12) 
+      grayscale(0.05);
+    -webkit-backdrop-filter: 
+      blur(150px) 
+      saturate(2.2) 
+      brightness(0.65) 
+      contrast(1.6) 
+      hue-rotate(3deg) 
+      sepia(0.12);
+  }
+  33% {
+    backdrop-filter: 
+      blur(155px) 
+      saturate(2.4) 
+      brightness(0.62) 
+      contrast(1.65) 
+      hue-rotate(4deg) 
+      sepia(0.15) 
+      grayscale(0.08);
+    -webkit-backdrop-filter: 
+      blur(155px) 
+      saturate(2.4) 
+      brightness(0.62) 
+      contrast(1.65) 
+      hue-rotate(4deg) 
+      sepia(0.15);
+  }
+  66% {
+    backdrop-filter: 
+      blur(148px) 
+      saturate(2.1) 
+      brightness(0.68) 
+      contrast(1.55) 
+      hue-rotate(2deg) 
+      sepia(0.1) 
+      grayscale(0.03);
+    -webkit-backdrop-filter: 
+      blur(148px) 
+      saturate(2.1) 
+      brightness(0.68) 
+      contrast(1.55) 
+      hue-rotate(2deg) 
+      sepia(0.1);
+  }
+}
+
+/* Distortion pulse animation - subtle filter distortion */
+@keyframes distortionPulse {
+  0%, 100% {
+    filter: hue-rotate(0deg) contrast(1) saturate(1);
+  }
+  25% {
+    filter: hue-rotate(1deg) contrast(1.05) saturate(1.1);
+  }
+  50% {
+    filter: hue-rotate(-1deg) contrast(0.98) saturate(1.05);
+  }
+  75% {
+    filter: hue-rotate(0.5deg) contrast(1.02) saturate(1.08);
+  }
+}
+
+/* 
+ * BACK TO TOP FLUID ANIMATIONS
+ * Smooth, elegant animations for scroll to top functionality
+ */
+
+/* 
+ * Scroll pulse animation - subtle breathing effect during scroll
+ * More elegant than standard pulse, designed for editorial aesthetic
+ */
+@keyframes scrollPulse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: translateY(-0.5px) scale(1.03);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(-1px) scale(1.06);
+  }
+}
+
+/* 
+ * Arrow bounce animation - fluid upward movement
+ * Communicates direction while maintaining elegance
+ */
+@keyframes arrowBounce {
+  0%, 100% {
+    transform: translateY(-0.5px) scale(1.08);
+  }
+  25% {
+    transform: translateY(-2px) scale(1.12);
+  }
+  50% {
+    transform: translateY(-1px) scale(1.1);
+  }
+  75% {
+    transform: translateY(-1.5px) scale(1.11);
+  }
+}
+
+/* 
+ * Smooth float animation for back to top button
+ * Subtle floating effect that enhances perceived responsiveness
+ */
+@keyframes smoothFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-1px);
+  }
+}
+
+/* 
+ * Enhanced hover lift animation
+ * More dramatic than standard hover for better visual feedback
+ */
+@keyframes hoverLift {
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+  100% {
+    transform: translateY(-3px) scale(1.1);
+  }
+}
+
+/* 
+ * DISTORTED CLOUDY BLUR ANIMATIONS
+ * Advanced breathing and distortion effects for mobile menu backdrop
+ */
+
+/* Cloudy breathing animation - subtle backdrop filter variations */
+@keyframes cloudyBreathe {
+  0%, 100% {
+    backdrop-filter: 
+      blur(120px) 
+      saturate(1.8) 
+      brightness(0.75) 
+      contrast(1.4) 
+      hue-rotate(2deg) 
+      sepia(0.08);
+    -webkit-backdrop-filter: 
+      blur(120px) 
+      saturate(1.8) 
+      brightness(0.75) 
+      contrast(1.4) 
+      hue-rotate(2deg) 
+      sepia(0.08);
+  }
+  50% {
+    backdrop-filter: 
+      blur(125px) 
+      saturate(1.9) 
+      brightness(0.72) 
+      contrast(1.45) 
+      hue-rotate(3deg) 
+      sepia(0.1);
+    -webkit-backdrop-filter: 
+      blur(125px) 
+      saturate(1.9) 
+      brightness(0.72) 
+      contrast(1.45) 
+      hue-rotate(3deg) 
+      sepia(0.1);
+  }
+}
+
+/* Intense cloudy breathing for mobile - more dramatic variations */
+@keyframes cloudyBreatheIntense {
+  0%, 100% {
+    backdrop-filter: 
+      blur(150px) 
+      saturate(2.2) 
+      brightness(0.65) 
+      contrast(1.6) 
+      hue-rotate(3deg) 
+      sepia(0.12) 
+      grayscale(0.05);
+    -webkit-backdrop-filter: 
+      blur(150px) 
+      saturate(2.2) 
+      brightness(0.65) 
+      contrast(1.6) 
+      hue-rotate(3deg) 
+      sepia(0.12);
+  }
+  33% {
+    backdrop-filter: 
+      blur(155px) 
+      saturate(2.4) 
+      brightness(0.62) 
+      contrast(1.65) 
+      hue-rotate(4deg) 
+      sepia(0.15) 
+      grayscale(0.08);
+    -webkit-backdrop-filter: 
+      blur(155px) 
+      saturate(2.4) 
+      brightness(0.62) 
+      contrast(1.65) 
+      hue-rotate(4deg) 
+      sepia(0.15);
+  }
+  66% {
+    backdrop-filter: 
+      blur(148px) 
+      saturate(2.1) 
+      brightness(0.68) 
+      contrast(1.55) 
+      hue-rotate(2deg) 
+      sepia(0.1) 
+      grayscale(0.03);
+    -webkit-backdrop-filter: 
+      blur(148px) 
+      saturate(2.1) 
+      brightness(0.68) 
+      contrast(1.55) 
+      hue-rotate(2deg) 
+      sepia(0.1);
+  }
+}
+
+/* Distortion pulse animation - subtle filter distortion */
+@keyframes distortionPulse {
+  0%, 100% {
+    filter: hue-rotate(0deg) contrast(1) saturate(1);
+  }
+  25% {
+    filter: hue-rotate(1deg) contrast(1.05) saturate(1.1);
+  }
+  50% {
+    filter: hue-rotate(-1deg) contrast(0.98) saturate(1.05);
+  }
+  75% {
+    filter: hue-rotate(0.5deg) contrast(1.02) saturate(1.08);
+  }
+}
+
+/* 
+ * EXTREME DISTORTION UTILITY CLASSES
+ * Additional distortion effects that can be combined with base blur
+ */
+
+/* Ultra distorted backdrop - maximum visual disruption */
+.backdrop-ultra-distorted {
+  backdrop-filter: 
+    blur(200px) 
+    saturate(3) 
+    brightness(0.5) 
+    contrast(2) 
+    hue-rotate(5deg) 
+    sepia(0.2) 
+    grayscale(0.1) 
+    invert(0.02) !important;
+  -webkit-backdrop-filter: 
+    blur(200px) 
+    saturate(3) 
+    brightness(0.5) 
+    contrast(2) 
+    hue-rotate(5deg) 
+    sepia(0.2) !important;
+}
+
+/* Atmospheric distortion - creates dream-like quality */
+.backdrop-atmospheric {
+  backdrop-filter: 
+    blur(180px) 
+    saturate(2.5) 
+    brightness(0.6) 
+    contrast(1.8) 
+    hue-rotate(8deg) 
+    sepia(0.15) 
+    opacity(0.9) !important;
+  -webkit-backdrop-filter: 
+    blur(180px) 
+    saturate(2.5) 
+    brightness(0.6) 
+    contrast(1.8) 
+    hue-rotate(8deg) 
+    sepia(0.15) !important;
+  animation: atmosphericShift 6s ease-in-out infinite !important;
+}
+
+/* Psychedelic distortion - color shifting effects */
+.backdrop-psychedelic {
+  backdrop-filter: 
+    blur(160px) 
+    saturate(4) 
+    brightness(0.7) 
+    contrast(2.2) 
+    hue-rotate(12deg) 
+    sepia(0.25) 
+    grayscale(0.05) !important;
+  -webkit-backdrop-filter: 
+    blur(160px) 
+    saturate(4) 
+    brightness(0.7) 
+    contrast(2.2) 
+    hue-rotate(12deg) 
+    sepia(0.25) !important;
+  animation: psychedelicWave 4s ease-in-out infinite !important;
+}
+
+/* Atmospheric shift animation */
+@keyframes atmosphericShift {
+  0%, 100% {
+    backdrop-filter: 
+      blur(180px) 
+      saturate(2.5) 
+      brightness(0.6) 
+      contrast(1.8) 
+      hue-rotate(8deg) 
+      sepia(0.15) 
+      opacity(0.9);
+  }
+  33% {
+    backdrop-filter: 
+      blur(185px) 
+      saturate(2.7) 
+      brightness(0.55) 
+      contrast(1.85) 
+      hue-rotate(10deg) 
+      sepia(0.18) 
+      opacity(0.88);
+  }
+  66% {
+    backdrop-filter: 
+      blur(175px) 
+      saturate(2.3) 
+      brightness(0.65) 
+      contrast(1.75) 
+      hue-rotate(6deg) 
+      sepia(0.12) 
+      opacity(0.92);
+  }
+}
+
+/* Psychedelic wave animation */
+@keyframes psychedelicWave {
+  0%, 100% {
+    backdrop-filter: 
+      blur(160px) 
+      saturate(4) 
+      brightness(0.7) 
+      contrast(2.2) 
+      hue-rotate(12deg) 
+      sepia(0.25) 
+      grayscale(0.05);
+  }
+  25% {
+    backdrop-filter: 
+      blur(165px) 
+      saturate(4.5) 
+      brightness(0.65) 
+      contrast(2.4) 
+      hue-rotate(18deg) 
+      sepia(0.3) 
+      grayscale(0.08);
+  }
+  50% {
+    backdrop-filter: 
+      blur(155px) 
+      saturate(3.8) 
+      brightness(0.75) 
+      contrast(2) 
+      hue-rotate(8deg) 
+      sepia(0.2) 
+      grayscale(0.02);
+  }
+  75% {
+    backdrop-filter: 
+      blur(170px) 
+      saturate(4.2) 
+      brightness(0.68) 
+      contrast(2.3) 
+      hue-rotate(15deg) 
+      sepia(0.28) 
+      grayscale(0.06);
+  }
+}
+
+/* Content spacing utilities for About and Manifesto pages */
+.page-content-spacing {
+  /* Default mobile spacing - no extra top margin */
+  margin-top: 0;
+}
+
+@media (min-width: 1024px) {
+  .page-content-spacing {
+    /* Desktop only - content starts lower, header remains at top */
+    margin-top: 6rem; /* 96px - pushes content down while header stays in place */
+  }
+}
+

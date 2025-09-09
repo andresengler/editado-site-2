@@ -1,0 +1,23 @@
+# Placeholder for Eiko Light Font File
+
+This file needs to be replaced with the actual Eiko Light font file from PangramPangram.
+
+**Font Details:**
+- Family: Eiko
+- Weight: Light (300)
+- Format: WOFF2
+- Source: PangramPangram
+
+**Installation Instructions:**
+1. Download Eiko Light from PangramPangram
+2. Convert to WOFF2 format if needed
+3. Replace this placeholder file with the actual font file
+4. Ensure filename matches exactly: `Eiko-Light.woff2`
+
+**Technical Specifications:**
+- Font-weight: 300
+- Font-style: normal
+- Font-display: swap
+- Optimized for web usage
+
+The typography system is already configured to use this font for all editorial content (serif elements).
