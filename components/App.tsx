@@ -51,7 +51,9 @@ export default function App() {
   };
 
   const getContainerClass = () => {
-    const base = `${getBackgroundClass()} bg-smooth-transition ${isTransitioning ? 'active' : ''} font-sans relative`;
+    const base =
+      `${getBackgroundClass()} bg-smooth-transition ${isTransitioning ? 'active' : ''} ` +
+      'font-sans relative';
     if (currentPage === 'about' || currentPage === 'manifesto') return base;
     return `min-h-screen ${base} flex flex-col overflow-x-hidden`;
   };
@@ -71,7 +73,7 @@ export default function App() {
         className="page-blur-overlay"
         animate={{
           backdropFilter: isTransitioning ? 'blur(2px) saturate(1.02)' : 'blur(0px) saturate(1)',
-          opacity: isTransitioning ? 0.95 : 1
+          opacity: isTransitioning ? 0.95 : 1,
         }}
         transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
         style={{ zIndex: isTransitioning ? 30 : -1 }}
