@@ -3,14 +3,14 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import { Header } from './components/Header';
-import { Footer } from './components/Footer';
-import { HomePage } from './components/HomePage';
-import { AboutPage } from './components/AboutPage';
-import { ManifestoPage } from './components/ManifestoPage';
-import { FloatingLetters } from './components/FloatingLetters';
+import { Header } from './Header';
+import { Footer } from './Footer';
+import { HomePage } from './HomePage';
+import { AboutPage } from './AboutPage';
+import { ManifestoPage } from './ManifestoPage';
+import { FloatingLetters } from './FloatingLetters';
 
-import { useIsMobile } from './components/ui/use-mobile';
+import { useIsMobile } from './ui/use-mobile';
 
 type PageKey = 'home' | 'about' | 'manifesto';
 
@@ -20,17 +20,14 @@ export default function App() {
   const [nextPage, setNextPage] = useState<PageKey | null>(null);
   const isMobile = useIsMobile();
 
-  // Recibe string (como esperan los hijos) y lo mapea al union PageKey
   const handleNavigate = (page: string) => {
     const allowed: PageKey[] = ['home', 'about', 'manifesto'];
     const target: PageKey = allowed.includes(page as PageKey) ? (page as PageKey) : 'home';
-
     if (target === currentPage) return;
 
     setIsTransitioning(true);
     setNextPage(target);
 
-    // Transición de salida/entrada
     setTimeout(() => {
       setCurrentPage(target);
       setTimeout(() => {
