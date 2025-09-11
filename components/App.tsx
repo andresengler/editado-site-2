@@ -2,29 +2,40 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Header } from './Header';
-import { Footer } from './Footer';
-import { HomePage } from './HomePage';
-import { AboutPage } from './AboutPage';
-import { ManifestoPage } from './ManifestoPage';
-import { FloatingLetters } from './FloatingLetters';
+
+import { Header } from './components/Header';
+import { Footer } from './components/Footer';
+import { HomePage } from './components/HomePage';
+import { AboutPage } from './components/AboutPage';
+import { ManifestoPage } from './components/ManifestoPage';
+import { FloatingLetters } from './components/FloatingLetters';
+
+import { useIsMobile } from './components/ui/use-mobile';
 
 type PageKey = 'home' | 'about' | 'manifesto';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<PageKey>('home');
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [nextPage, setNextPage] = useState<PageKey | ''>('');
+  const [nextPage, setNextPage] = useState<PageKey | null>(null);
+  const isMobile = useIsMobile();
 
-  const handleNavigate = (page: PageKey) => {
-    if (page === currentPage) return;
+  // Recibe string (como esperan los hijos) y lo mapea al union PageKey
+  const handleNavigate = (page: string) => {
+    const allowed: PageKey[] = ['home', 'about', 'manifesto'];
+    const target: PageKey = allowed.includes(page as PageKey) ? (page as PageKey) : 'home';
+
+    if (target === currentPage) return;
+
     setIsTransitioning(true);
-    setNextPage(page);
+    setNextPage(target);
+
+    // Transición de salida/entrada
     setTimeout(() => {
-      setCurrentPage(page);
+      setCurrentPage(target);
       setTimeout(() => {
         setIsTransitioning(false);
-        setNextPage('');
+        setNextPage(null);
       }, 150);
     }, 100);
   };
@@ -51,9 +62,7 @@ export default function App() {
   };
 
   const getContainerClass = () => {
-    const base =
-      `${getBackgroundClass()} bg-smooth-transition ${isTransitioning ? 'active' : ''} ` +
-      'font-sans relative';
+    const base = `${getBackgroundClass()} bg-smooth-transition ${isTransitioning ? 'active' : ''} font-sans relative`;
     if (currentPage === 'about' || currentPage === 'manifesto') return base;
     return `min-h-screen ${base} flex flex-col overflow-x-hidden`;
   };
@@ -68,7 +77,7 @@ export default function App() {
         style={{ zIndex: isTransitioning ? 1 : -1 }}
       />
 
-      {/* Blur global */}
+      {/* Desenfoque global durante transición */}
       <motion.div
         className="page-blur-overlay"
         animate={{
@@ -95,7 +104,7 @@ export default function App() {
           <Header currentPage={currentPage} onPageChange={handleNavigate} />
         </div>
 
-        {/* Página */}
+        {/* Página actual */}
         <div className={currentPage === 'home' ? 'flex-1 relative z-1' : 'relative z-1'}>
           <AnimatePresence mode="wait">
             <motion.div
