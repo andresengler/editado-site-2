@@ -1,9 +1,6 @@
-'use client'
-import dynamic from 'next/dynamic'
-
-// Cargamos la App sin SSR para evitar problemas de window/document/animaciones
-const App = dynamic(() => import('../components/App').then(m => m.default ?? m), { ssr: false })
+'use client';
+import App from '../components/App';
 
 export default function Page() {
-  return <App />
+  return <App />;
 }
