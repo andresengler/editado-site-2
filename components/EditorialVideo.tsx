@@ -1,5 +1,7 @@
+'use client';
+
 import { useRef, useEffect, useState } from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 
 interface EditorialVideoProps {
   src: string;
@@ -57,7 +59,7 @@ export function EditorialVideo({
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Slight delay for aesthetic timing coordination with page transitions
+            // Slight delay para coordinar con transiciones de página
             setTimeout(() => {
               setIsInView(true);
             }, transition === 'fast' ? 50 : transition === 'slow' ? 200 : 100);
@@ -153,7 +155,7 @@ export function EditorialVideo({
         filter: { duration: transition === 'fast' ? 0.35 : transition === 'slow' ? 1.1 : 0.65 }
       }}
     >
-      {/* Enhanced loading overlay with aesthetic treatments */}
+      {/* Overlay de carga con blur */}
       {isLoading && (
         <motion.div
           className={`absolute inset-0 flex items-center justify-center z-10 ${
@@ -161,7 +163,8 @@ export function EditorialVideo({
             aesthetic === 'cinematic' ? 'bg-background/90' : 
             'bg-background/92'
           }`}
-          initial={{ opacity: 1, backdrop: 'blur(0px)' }}
+          style={{ willChange: 'opacity, backdrop-filter' }}
+          initial={{ opacity: 1, backdropFilter: 'blur(0px)' }}
           animate={{ 
             opacity: isLoading ? 1 : 0,
             backdropFilter: isLoading ? 'blur(2px)' : 'blur(0px)'
@@ -198,7 +201,7 @@ export function EditorialVideo({
         style={{ aspectRatio }}
       />
 
-      {/* Aesthetic overlay based on treatment style */}
+      {/* Aesthetic overlay */}
       <motion.div 
         className={`absolute inset-0 pointer-events-none ${
           aesthetic === 'minimal' ? 'bg-black/2' : 
