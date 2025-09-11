@@ -1,6 +1,7 @@
 {
   "name": "editado-site-2",
   "private": true,
+  "engines": { "node": ">=18" },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,6 +10,7 @@
   "dependencies": {
     "next": "14.2.5",
     "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react-dom": "18.3.1",
+    "framer-motion": "^11.3.31"
   }
 }
