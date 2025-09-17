@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import { WorkingIndicator } from './WorkingIndicator';
 import { InternalHeader } from './InternalHeader';

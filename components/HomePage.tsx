@@ -1,3 +1,5 @@
+'use client';
+
 import { useIsMobile } from './ui/use-mobile';
 import { motion } from 'framer-motion';
 
