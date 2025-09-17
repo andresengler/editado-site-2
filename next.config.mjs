@@ -1,10 +1,10 @@
+// next.config.mjs
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    optimizeCss: false, // evita cuelgues durante la optimización
+    optimizeCss: false, // desactiva critters
   },
-  // opcional: si no usas ESLint en CI
-  eslint: { ignoreDuringBuilds: true },
+  reactStrictMode: true,
 };
 
 export default nextConfig;
