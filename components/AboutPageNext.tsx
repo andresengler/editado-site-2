@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { useState, useRef, useEffect } from 'react';
 import { WorkingIndicator } from './WorkingIndicator';
 import { ContactModal } from './ContactModal';

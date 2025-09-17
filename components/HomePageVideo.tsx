@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { EditorialVideo } from './EditorialVideo';
 import { useIsMobile } from './ui/use-mobile';
 

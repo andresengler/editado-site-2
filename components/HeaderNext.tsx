@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import { ContactModal } from './ContactModal';

@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { EditorialVideo } from './EditorialVideo';
 import { useState, useEffect } from 'react';
 

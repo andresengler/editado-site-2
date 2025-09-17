@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { EditorialVideo } from './EditorialVideo';
 import { useState, useEffect } from 'react';
 

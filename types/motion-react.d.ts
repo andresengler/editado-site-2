@@ -1,3 +1,3 @@
-declare module 'motion/react' {
+declare module 'framer-motion' {
   export * from 'framer-motion';
 }
